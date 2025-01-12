@@ -1,0 +1,168 @@
+{
+	"info": {
+		"_postman_id": "1badf014-3d0c-490f-a687-9b61e3be7146",
+		"name": "Purchasing_Management_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9470423"
+	},
+	"item": [
+		{
+			"name": "Actuator Health Check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/actuator/health",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"actuator",
+						"health"
+					]
+				},
+				"description": "Check application health."
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Compras Ordenadas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/v1/compras",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"compras"
+					]
+				},
+				"description": "Retorna uma lista das compras ordenadas por valor total crescente."
+			},
+			"response": []
+		},
+		{
+			"name": "Obter Maior Compra por Ano",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/v1/compras/maior-compra/2018",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"compras",
+						"maior-compra",
+						"2018"
+					]
+				},
+				"description": "Retorna a maior compra do ano especificado. Substitua :ano pelo ano desejado."
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Clientes Fieis",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/v1/clientes/fieis",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"clientes",
+						"fieis"
+					]
+				},
+				"description": "Retorna o Top 3 clientes mais fiéis."
+			},
+			"response": []
+		},
+		{
+			"name": "Recomendar Tipo de Vinho para Cliente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/v1/clientes/recomendacao/1051252612/tipo",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"clientes",
+						"recomendacao",
+						"1051252612",
+						"tipo"
+					]
+				},
+				"description": "Retorna uma recomendação de vinho baseada no tipo mais comprado pelo cliente. Substitua :cpf pelo CPF do cliente."
+			},
+			"response": []
+		},
+		{
+			"name": "Importar Produtos",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/v1/produtos/importar",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"produtos",
+						"importar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Importar Clientes",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/v1/clientes/importar",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"clientes",
+						"importar"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8080",
+			"type": "default"
+		}
+	]
+}
